@@ -6,24 +6,19 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class FormFieldsPageTest extends BaseTest{
-    private FormFieldsPage formFieldsPage;
     private String expectedTitle = "Form Fields";
     private String name = "John Doe";
 
-    @BeforeMethod
-    public void navigateToFormFieldsPage(){
-        landingPage.clickOnFormFieldsLink();
-        formFieldsPage = new FormFieldsPage(driver);
-    }
-
     @Test
     public void validateFormTitle(){
+        landingPage.navigateTo().clickOnFormFieldsLink();
         String actualTitle = formFieldsPage.getFormTitleText();
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
     @Test
     public void validateNameInputIsFocused_WhenEmptyAndSubmitIsPressed() throws InterruptedException {
+        landingPage.navigateTo().clickOnFormFieldsLink();
         Assert.assertTrue(formFieldsPage.isNameElementFocused());
     }
 }

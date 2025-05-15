@@ -7,38 +7,33 @@ import org.hquijano.pages.LandingPage;
 import org.hquijano.utils.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.sql.Driver;
 import java.time.Duration;
 
 public class BaseTest {
-    protected WebDriver driver;
     public LandingPage landingPage;
     public JSDelaysPage jsDelaysPage;
     public FormFieldsPage formFieldsPage;
 
     @BeforeMethod(alwaysRun = true)
-    public void launch() {
-        driver.get(ConfigReader.getBaseUrl());
-        landingPage = new LandingPage(driver);
-        jsDelaysPage = new JSDelaysPage(driver);
-        formFieldsPage = new FormFieldsPage(driver);
-    }
-
-    @BeforeClass(alwaysRun = true)
     public void setup(){
-        driver = new DriverFactory().createDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(ConfigReader.getImplicitWaitTime())));
+        // Getting driver instance from ThreadLocal DriverFactory
+        DriverFactory.getDriver().manage().window().maximize();
+        DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(ConfigReader.getImplicitWaitTime())));
+
+        landingPage = new LandingPage(DriverFactory.getDriver());
+        jsDelaysPage = new JSDelaysPage(DriverFactory.getDriver());
+        formFieldsPage = new FormFieldsPage(DriverFactory.getDriver());
     }
 
 
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void teardown(){
-        if (driver != null){
-            driver.quit();
-        }
-        driver = null;
+        // Quitting driver instance from ThreadLocal DriverFactory
+        DriverFactory.quitDriver();
     }
 }

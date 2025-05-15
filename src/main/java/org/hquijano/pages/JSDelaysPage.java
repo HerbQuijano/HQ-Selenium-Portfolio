@@ -11,12 +11,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import java.time.Duration;
 
 public class JSDelaysPage extends BasePage {
-    WebDriver driver;
-    String messageToBeDisplayed = "Liftoff!";
+    private final String messageToBeDisplayed = "Liftoff!";
 
     public JSDelaysPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     // Locators
@@ -38,8 +36,9 @@ public class JSDelaysPage extends BasePage {
 
     // Action methods
 
-    public void clickStartButton() {
+    public JSDelaysPage clickStartButton() {
         startButton.click(); // Click on the start button
+        return this;
     }
 
     public String getLoadingMessage() {
@@ -54,13 +53,13 @@ public class JSDelaysPage extends BasePage {
 
         // Use FluentWait to wait until the countdown element's text matches the expected message
         return fluentWait.until(driver -> {
-                // Locate the countdown element using the specified locator
-                WebElement countdownElement = driver.findElement(countDownLocatorBy);
-                // Retrieve the text from the countdown element
-                String value = countdownElement.getText();
-                // Check if the retrieved text matches the expected message
-                // If it matches, return the text; otherwise, return null to keep waiting
-                return messageToBeDisplayed.equals(value) ? value : null;
+            // Locate the countdown element using the specified locator
+            WebElement countdownElement = driver.findElement(countDownLocatorBy);
+            // Retrieve the text from the countdown element
+            String value = countdownElement.getText();
+            // Check if the retrieved text matches the expected message
+            // If it matches, return the text; otherwise, return null to keep waiting
+            return messageToBeDisplayed.equals(value) ? value : null;
         });
     }
 
@@ -73,7 +72,5 @@ public class JSDelaysPage extends BasePage {
         // Wait until the rocket image is visible and then check if it contains the "liftoff" class
         return driver.findElement(rocketLocatorNotLaunchedBy).isDisplayed();
     }
-
-
 
 }

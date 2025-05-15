@@ -2,6 +2,7 @@ package org.hquijano.pages;
 
 // Import statements
 import org.hquijano.base.BasePage;
+import org.hquijano.utils.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class LandingPage extends BasePage {
+    private final String url = ConfigReader.getBaseUrl();
 
     public LandingPage(WebDriver driver) {
         super(driver); // Call to the parent class constructor
-        this.driver = driver; // Assign the WebDriver instance to the class variable
     }
 
     // Locators
@@ -83,12 +84,19 @@ public class LandingPage extends BasePage {
 
     // Actions
 
-    public void clickOnJSDelaysLink() {
-        jsDelaysLink.click(); // Click on the JavaScript Delays link
+    public LandingPage navigateTo() {
+        driver.get(url); // Navigate to the base URL
+        return this;
     }
 
-    public void clickOnFormFieldsLink() {
+    public JSDelaysPage clickOnJSDelaysLink() {
+        jsDelaysLink.click(); // Click on the JavaScript Delays link
+        return new JSDelaysPage(driver);
+    }
+
+    public FormFieldsPage clickOnFormFieldsLink() {
         formFieldsLink.click(); // Click on the Form Fields link
+        return new FormFieldsPage(driver);
     }
 
     public void clickOnPopupsLink() {

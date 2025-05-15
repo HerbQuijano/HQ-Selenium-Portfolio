@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class FormFieldsPage extends BasePage {
-    WebDriver driver;
     private int numberOfRequiredElements = 1;
     private final List<String> favoriteDrinks = List.of("Coke", "Pepsi", "Sprite", "Water", "Fanta");
     private final List<String> favoriteColors = List.of("Red", "Blue", "Yellow", "Green", "Purple");
@@ -17,7 +16,6 @@ public class FormFieldsPage extends BasePage {
 
     public FormFieldsPage(WebDriver driver){
         super(driver);
-        this.driver = driver;
     }
 
     // Element Locators
@@ -68,7 +66,7 @@ public class FormFieldsPage extends BasePage {
         return requiredElements.size() == numberOfRequiredElements;
     }
 
-    public void validateListedDrinks(){
+    public FormFieldsPage validateListedDrinks(){
         boolean allMatch = drinkLabels.stream()
                 .map(label -> label.getText().trim())
                 .allMatch(favoriteDrinks::contains);
@@ -76,10 +74,12 @@ public class FormFieldsPage extends BasePage {
         if (!allMatch) {
             throw new AssertionError("Some drink labels are not in the favoriteDrinks list.");
         }
+        return this;
     }
 
-    public void clickOnSubmitButton() {
+    public FormFieldsPage clickOnSubmitButton() {
         submitButton.click();
+        return this;
     }
 
     public boolean isNameElementFocused() throws InterruptedException {

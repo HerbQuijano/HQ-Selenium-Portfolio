@@ -14,13 +14,36 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverFactory {
-    private final String browser = ConfigReader.getBrowser();
+    // Setting up variable for Singleton pattern
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    private static final String browser = ConfigReader.getBrowser();
     //private final String browser = System.getProperty("browser", "chrome");
-    private final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
-    private final boolean isRemote = Boolean.parseBoolean(System.getProperty("remote", "false"));
+    private static final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+    private static final boolean isRemote = Boolean.parseBoolean(System.getProperty("remote", "false"));
 
+    // Setting up private constructor to implement Singleton pattern
+    private DriverFactory(){
+        // Singleton Magic!!
+    }
 
-    public WebDriver createDriver() {
+    // The following methods are to create the WebDriver
+    public static WebDriver getDriver(){
+        if (driver.get() == null){
+            driver.set(createDriver());
+        }
+        return driver.get();
+    }
+
+    // And quit the WebDriver
+    public static void quitDriver(){
+        if (driver.get() != null){
+            driver.get().quit();
+            driver.remove();
+        }
+    }
+
+    public static WebDriver createDriver() {
         switch(browser.toLowerCase()) {
             case "chrome":
                 return isRemote ? createRemoteChromeDriver() : createChromeDriver();
@@ -33,7 +56,7 @@ public class DriverFactory {
         }
     }
 
-    public WebDriver createChromeDriver() {
+    public static WebDriver createChromeDriver() {
          ChromeOptions options = new ChromeOptions();
          if (isHeadless) {
              options.addArguments("--headless=new");
@@ -42,7 +65,7 @@ public class DriverFactory {
          return new ChromeDriver(options);
     }
 
-    public RemoteWebDriver createRemoteChromeDriver() {
+    public static RemoteWebDriver createRemoteChromeDriver() {
         ChromeOptions options = new ChromeOptions();
         if (isHeadless) {
             options.addArguments("--headless=new");
@@ -56,7 +79,7 @@ public class DriverFactory {
         }
     }
 
-    public WebDriver createFirefoxDriver() {
+    public static WebDriver createFirefoxDriver() {
         FirefoxOptions options = new FirefoxOptions();
         if (isHeadless){
             options.addArguments("-headless");
@@ -64,7 +87,7 @@ public class DriverFactory {
         return new FirefoxDriver(options);
     }
 
-    private WebDriver createRemoteFirefoxDriver() {
+    private static WebDriver createRemoteFirefoxDriver() {
         FirefoxOptions options = new FirefoxOptions();
         if (isHeadless) {
             options.addArguments("--headless");
@@ -78,7 +101,7 @@ public class DriverFactory {
         }
     }
 
-    private WebDriver createEdgeDriver(){
+    private static WebDriver createEdgeDriver(){
         EdgeOptions options = new EdgeOptions();
         if (isHeadless){
             options.addArguments("--headless=new");
@@ -86,7 +109,7 @@ public class DriverFactory {
         return new EdgeDriver(options);
     }
 
-    private WebDriver createRemoteEdgeDriver(){
+    private static WebDriver createRemoteEdgeDriver(){
         EdgeOptions options = new EdgeOptions();
 
         if (isHeadless){
@@ -100,5 +123,4 @@ public class DriverFactory {
         }
 
     }
-
 }

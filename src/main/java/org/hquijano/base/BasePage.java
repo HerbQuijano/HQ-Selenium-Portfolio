@@ -22,82 +22,92 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void navigateTo(String url){
-        driver.navigate().to(url);
-    }
-
-    public void waitUntilElementByXpathIsVisible(String locator){
+    public BasePage waitUntilElementByXpathIsVisible(String locator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+        return this;
     }
 
-    public void waitUntilElementByLinkTextIsVisible(String text){
+    public BasePage waitUntilElementByLinkTextIsVisible(String text){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(text)));
+        return this;
     }
 
-    public void waitUntilElementByClassNameIsVisible(String className){
+    public BasePage waitUntilElementByClassNameIsVisible(String className){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(className)));
+        return this;
     }
 
-    public void waitUntilElementByIdIsVisible(String id){
+    public BasePage waitUntilElementByIdIsVisible(String id){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id))); // Wait for element by ID
+        return this;
     }
 
-    public void waitUntilElementByCssSelectorIsVisible(String cssSelector){
+    public BasePage waitUntilElementByCssSelectorIsVisible(String cssSelector){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector))); // Wait for element by CSS selector
+        return this;
     }
 
-    public void waitUntilElementIsVisible(WebElement element){
+    public BasePage waitUntilElementIsVisible(WebElement element){
         wait.until(ExpectedConditions.visibilityOf(element)); // Wait for element to be visible
+        return this;
     }
 
-    public void clickOnElement(WebElement element){
+    public BasePage clickOnElement(WebElement element){
         element.click();
+        return this;
     }
 
-    public void inputText(WebElement element, String text){
+    public BasePage inputText(WebElement element, String text){
         element.sendKeys(text);
+        return this;
     }
 
     public String getElementText(WebElement element){
         return element.getText(); // Use WebDriver to retrieve text from the element
     }
 
-    public void clickJavaScriptExecutor(WebElement element){
+    public BasePage clickJavaScriptExecutor(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element); // Use JavaScriptExecutor to click
+        return this;
     }
 
-    public void selectByVisibleText(WebElement element, String text){
+    public BasePage selectByVisibleText(WebElement element, String text){
         Select select = new Select(element);
         select.selectByVisibleText(text);
+        return this;
     }
 
-    public void selectByIndex(WebElement element, int index){
+    public BasePage selectByIndex(WebElement element, int index){
         Select select = new Select(element);
         select.selectByIndex(index); // Use Select to select by index
+        return this;
     }
 
-    public void clickCheckBoxByIndex(WebElement checkbox, int index){
+    public BasePage clickCheckBoxByIndex(WebElement checkbox, int index){
         WebElement checkboxes = driver.findElements(By.cssSelector(checkbox.getAttribute("name"))).get(index);
         if (!checkboxes.isSelected()){
             checkboxes.click();
         }
-
+        return this;
     }
 
-    public void clickCheckBoxByValue(WebElement checkbox, String value){
+    public BasePage clickCheckBoxByValue(WebElement checkbox, String value){
         WebElement checkboxes = driver.findElement(By.cssSelector("input[value='" + value + "']"));
         if (!checkboxes.isSelected()){
             checkboxes.click();
         }
+        return this;
     }
 
-    public void moveToElement(WebElement element){
+    public BasePage moveToElement(WebElement element){
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform(); // Use Actions to move mouse to the element
+        return this;
     }
 
-    public void scrollToElement(WebElement element){
+    public BasePage scrollToElement(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        return this;
     }
 
 }
