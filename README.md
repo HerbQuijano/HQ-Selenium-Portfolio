@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+> ⚠️ This project is for learning and demonstration purposes. It is not intended for production use.
+
 # 🧪 Automation Testing Framework (Selenium + Java + TestNG)
 
 Welcome to my personal automation testing framework, built using **Selenium 4**, **Java**, and **TestNG**.  
