@@ -1,14 +1,17 @@
 package org.hquijano.Tests;
 
 import org.hquijano.core.DriverFactory;
+import org.hquijano.listeners.ScreenshotListener;
 import org.hquijano.pages.LandingPage;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
+@Listeners(ScreenshotListener.class)
 public class LandingPageTest extends BaseTest {
     private int numberOfButtons = 19;
 

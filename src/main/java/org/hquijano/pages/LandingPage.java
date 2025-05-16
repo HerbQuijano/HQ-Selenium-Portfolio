@@ -99,8 +99,9 @@ public class LandingPage extends BasePage {
         return new FormFieldsPage(driver);
     }
 
-    public void clickOnPopupsLink() {
-        popupsLink.click(); // Click on the Popups link
+    public PopupsPage clickOnPopupsLink() {
+        popupsLink.click();
+        return new PopupsPage(driver);// Click on the Popups link
     }
 
     public void clickOnSlidersLink() {

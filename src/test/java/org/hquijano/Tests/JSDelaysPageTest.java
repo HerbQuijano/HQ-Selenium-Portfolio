@@ -1,10 +1,13 @@
 package org.hquijano.Tests;
 
+import org.hquijano.listeners.ScreenshotListener;
 import org.hquijano.pages.JSDelaysPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(ScreenshotListener.class)
 public class JSDelaysPageTest extends BaseTest {
 
     @Test

@@ -52,6 +52,10 @@ public class BasePage {
         return this;
     }
 
+    public void waitUntilAlertIsPresent(){
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
     public BasePage clickOnElement(WebElement element){
         element.click();
         return this;
@@ -108,6 +112,20 @@ public class BasePage {
     public BasePage scrollToElement(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         return this;
+    }
+
+    public BasePage dismissPopupAlert(){
+        driver.switchTo().alert().dismiss();
+        return this;
+    }
+
+    public BasePage acceptPopupAlert(){
+        driver.switchTo().alert().accept();
+        return this;
+    }
+
+    public String getPopupText(){
+        return driver.switchTo().alert().getText();
     }
 
 }
