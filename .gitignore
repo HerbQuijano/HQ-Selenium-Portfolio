@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /screenshots
+/.idea
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -36,4 +37,3 @@ build/
 .vscode/
 
 ### Mac OS ###
-
