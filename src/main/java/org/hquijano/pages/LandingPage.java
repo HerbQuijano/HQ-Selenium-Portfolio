@@ -118,8 +118,10 @@ public class LandingPage extends BasePage {
         return new PopupsPage(driver);// Click on the Popups link
     }
 
-    public void clickOnSlidersLink() {
-        slidersLink.click(); // Click on the Sliders link
+    public SlidersPage clickOnSlidersLink() {
+        slidersLink.click();
+        return new SlidersPage(driver);
+        // Click on the Sliders link
     }
 
     public void clickOnCalendarLink() {

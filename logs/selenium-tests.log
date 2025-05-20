@@ -1,0 +1,16 @@
+2025-05-20 16:57:17 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\drako\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml"
+2025-05-20 16:57:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\drako\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+2025-05-20 16:57:20 INFO  TestListener:13 - STARTING TEST: testTitle
+2025-05-20 16:57:21 INFO  TestListener:18 - ✅ PASSED: testTitle
+2025-05-20 16:58:52 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\drako\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml"
+2025-05-20 16:58:53 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\drako\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+2025-05-20 16:58:55 INFO  TestListener:13 - STARTING TEST: testHeadingText
+2025-05-20 16:58:56 INFO  TestListener:18 - ✅ PASSED: testHeadingText
+2025-05-20 16:58:58 INFO  TestListener:13 - STARTING TEST: testNumberOfButtons
+2025-05-20 16:58:59 INFO  TestListener:18 - ✅ PASSED: testNumberOfButtons
+2025-05-20 16:59:01 INFO  TestListener:13 - STARTING TEST: testTitle
+2025-05-20 16:59:02 INFO  TestListener:18 - ✅ PASSED: testTitle
