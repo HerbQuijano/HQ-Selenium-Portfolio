@@ -33,7 +33,7 @@ public class DriverFactory {
 
     private static final String browser = ConfigReader.getBrowser();
     //private final String browser = System.getProperty("browser", "chrome");
-    private static final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+    private static final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "true"));
     private static final boolean isRemote = Boolean.parseBoolean(System.getProperty("remote", "false"));
 
     // Setting up private constructor to implement Singleton pattern

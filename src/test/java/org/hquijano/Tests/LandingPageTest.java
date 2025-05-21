@@ -37,7 +37,7 @@ public class LandingPageTest extends BaseTest {
     @Test
     public void testTitle() {
         String title = landingPage.navigateTo().getTitle();
-        Assert.assertEquals(title, "Learn and Practice Automation | authomateNow");
+        Assert.assertEquals(title, "Learn and Practice Automation | automateNow");
     }
 
     @Test
