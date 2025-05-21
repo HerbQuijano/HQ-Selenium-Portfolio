@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hquijano.core.DriverFactory;
 import org.hquijano.utilities.ExtentManager;
+import org.hquijano.utilities.ScreenshotUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,42 +29,30 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        logger.info("STARTING TEST: " + result.getName());
+        logger.info("STARTING TEST: {}", result.getName());
         ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
         test.set(extentTest);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        logger.info("✅ PASSED: " + result.getName());
+        logger.info("✅ PASSED: {}", result.getName());
         test.get().log(Status.PASS, "Test passed");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.error("❌ FAILED: " + result.getName());
-        logger.error("Cause: " + result.getThrowable());
+        logger.error("❌ FAILED: {}", result.getName());
+        logger.error("Cause: {}", String.valueOf(result.getThrowable()));
         test.get().fail(result.getThrowable());
 
-        // Take screenshot
-        TakesScreenshot ts = (TakesScreenshot) DriverFactory.getDriver();
-        byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-
-        // Save screenshot to file and attach
-        String screenshotPath = "screenshots/" + result.getMethod().getMethodName() + ".png";
-        try {
-            Files.createDirectories(Paths.get("test-output/screenshots/"));
-            Files.write(Paths.get(screenshotPath), screenshot);
-            test.get().addScreenCaptureFromPath(screenshotPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-            test.get().warning("Failed to attach screenshot due to: " + e.getMessage());
-        }
+        String relativePath = ScreenshotUtil.captureScreenshot(result.getMethod().getMethodName());
+        test.get().addScreenCaptureFromPath(relativePath);
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        logger.warn("⏭️ SKIPPED: " + result.getName());
+        logger.warn("⏭\uFE0F SKIPPED: {}", result.getName());
     }
 
     @Override

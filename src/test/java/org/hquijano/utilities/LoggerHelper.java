@@ -1,4 +1,4 @@
-package org.hquijano.utils;
+package org.hquijano.utilities;
 
 import org.apache.logging.log4j.Logger;
 

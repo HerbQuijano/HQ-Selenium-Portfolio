@@ -38,3 +38,5 @@ build/
 ### Mac OS ###
 !/.idea/
 !/test-output/
+!/logs/
+!/test-output/screenshots/
