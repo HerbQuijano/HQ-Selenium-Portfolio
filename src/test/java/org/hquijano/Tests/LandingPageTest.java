@@ -30,14 +30,14 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-@Listeners({ScreenshotListener.class, TestListener.class})
+@Listeners(TestListener.class)
 public class LandingPageTest extends BaseTest {
     private int numberOfButtons = 19;
 
     @Test
     public void testTitle() {
         String title = landingPage.navigateTo().getTitle();
-        Assert.assertEquals(title, "Learn and Practice Automation | automateNow");
+        Assert.assertEquals(title, "Learn and Practice Automation | authomateNow");
     }
 
     @Test

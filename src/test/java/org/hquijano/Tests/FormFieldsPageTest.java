@@ -15,13 +15,14 @@
 package org.hquijano.Tests;
 
 import org.hquijano.listeners.ScreenshotListener;
+import org.hquijano.listeners.TestListener;
 import org.hquijano.pages.FormFieldsPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(ScreenshotListener.class)
+@Listeners(TestListener.class)
 public class FormFieldsPageTest extends BaseTest{
     private String expectedTitle = "Form Fields";
     private String name = "John Doe";

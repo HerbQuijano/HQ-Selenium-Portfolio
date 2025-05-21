@@ -14,3 +14,14 @@
 2025-05-20 16:58:59 INFO  TestListener:18 - ✅ PASSED: testNumberOfButtons
 2025-05-20 16:59:01 INFO  TestListener:13 - STARTING TEST: testTitle
 2025-05-20 16:59:02 INFO  TestListener:18 - ✅ PASSED: testTitle
+2025-05-20 22:34:22 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\drako\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml"
+2025-05-20 22:34:22 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\drako\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+2025-05-20 22:34:24 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 22:34:26 INFO  TestListener:28 - ✅ PASSED: testHeadingText
+2025-05-20 22:34:27 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 22:34:28 INFO  TestListener:28 - ✅ PASSED: testNumberOfButtons
+2025-05-20 22:34:30 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 22:34:31 ERROR TestListener:33 - ❌ FAILED: testTitle
+2025-05-20 22:34:31 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Automation | authomateNow] but found [Learn and Practice Automation | automateNow]

@@ -15,12 +15,13 @@
 package org.hquijano.Tests;
 
 import org.hquijano.listeners.ScreenshotListener;
+import org.hquijano.listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(ScreenshotListener.class)
+@Listeners(TestListener.class)
 public class PopupsPageTest extends BaseTest {
 
     @Test
