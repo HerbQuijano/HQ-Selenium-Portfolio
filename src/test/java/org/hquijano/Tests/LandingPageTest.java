@@ -17,6 +17,7 @@ package org.hquijano.Tests;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hquijano.core.DriverFactory;
+import org.hquijano.listeners.ExtentTestListener;
 import org.hquijano.listeners.ScreenshotListener;
 import org.hquijano.listeners.TestListener;
 import org.hquijano.pages.LandingPage;
@@ -30,14 +31,14 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-@Listeners(TestListener.class)
+@Listeners({TestListener.class})
 public class LandingPageTest extends BaseTest {
     private int numberOfButtons = 19;
 
     @Test
     public void testTitle() {
         String title = landingPage.navigateTo().getTitle();
-        Assert.assertEquals(title, "Learn and Practice Automation | automateNow");
+        Assert.assertEquals(title, "Learn and Practice Authomation | automateNow");
     }
 
     @Test

@@ -45,3 +45,76 @@
 2025-05-20 23:33:35 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
 2025-05-20 23:33:36 INFO  TestListener:23 - STARTING TEST: testTitle
 2025-05-20 23:33:37 INFO  TestListener:28 - ? PASSED: testTitle
+2025-05-20 23:41:40 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:41:41 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:41:43 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:41:44 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:41:46 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:41:47 INFO  TestListener:28 - ? PASSED: testTitle
+2025-05-20 23:43:34 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:43:35 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:43:37 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:43:38 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:43:40 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:43:41 INFO  TestListener:28 - ? PASSED: testTitle
+2025-05-20 23:44:24 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:44:25 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:44:27 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:44:28 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:44:30 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:44:31 INFO  TestListener:28 - ? PASSED: testTitle
+2025-05-20 23:46:09 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:46:10 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:46:12 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:46:13 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:46:15 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:46:16 INFO  TestListener:28 - ? PASSED: testTitle
+2025-05-20 23:46:41 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:46:43 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:46:45 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:46:46 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:46:48 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:46:49 ERROR TestListener:33 - ? FAILED: testTitle
+2025-05-20 23:46:49 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
+2025-05-20 23:47:41 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:47:42 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:47:45 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:47:46 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:47:47 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:47:49 ERROR TestListener:33 - ? FAILED: testTitle
+2025-05-20 23:47:49 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
+2025-05-20 23:48:46 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:48:47 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:48:49 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:48:50 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:48:52 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:48:53 ERROR TestListener:33 - ? FAILED: testTitle
+2025-05-20 23:48:53 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
+2025-05-20 23:52:56 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:52:57 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:52:59 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:53:00 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:53:02 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:53:03 ERROR TestListener:33 - ? FAILED: testTitle
+2025-05-20 23:53:03 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
+2025-05-20 23:55:09 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:55:10 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:55:12 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:55:13 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:55:15 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:55:17 ERROR TestListener:33 - ? FAILED: testTitle
+2025-05-20 23:55:17 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
+2025-05-20 23:56:43 INFO  TestListener:23 - STARTING TEST: testHeadingText
+2025-05-20 23:56:44 INFO  TestListener:28 - ? PASSED: testHeadingText
+2025-05-20 23:56:46 INFO  TestListener:23 - STARTING TEST: testNumberOfButtons
+2025-05-20 23:56:47 INFO  TestListener:28 - ? PASSED: testNumberOfButtons
+2025-05-20 23:56:49 INFO  TestListener:23 - STARTING TEST: testTitle
+2025-05-20 23:56:51 ERROR TestListener:33 - ? FAILED: testTitle
+2025-05-20 23:56:51 ERROR TestListener:34 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
+2025-05-21 00:02:17 INFO  TestListener:31 - STARTING TEST: testHeadingText
+2025-05-21 00:02:18 INFO  TestListener:38 - ? PASSED: testHeadingText
+2025-05-21 00:02:21 INFO  TestListener:31 - STARTING TEST: testNumberOfButtons
+2025-05-21 00:02:22 INFO  TestListener:38 - ? PASSED: testNumberOfButtons
+2025-05-21 00:02:24 INFO  TestListener:31 - STARTING TEST: testTitle
+2025-05-21 00:02:25 ERROR TestListener:44 - ? FAILED: testTitle
+2025-05-21 00:02:25 ERROR TestListener:45 - Cause: java.lang.AssertionError: expected [Learn and Practice Authomation | automateNow] but found [Learn and Practice Automation | automateNow]
