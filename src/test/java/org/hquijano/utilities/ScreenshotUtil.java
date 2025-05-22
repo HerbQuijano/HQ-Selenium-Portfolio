@@ -12,19 +12,6 @@ import java.util.Date;
 
 public class ScreenshotUtil {
     public static String captureScreenshot(String testName) {
-//        try {
-//            TakesScreenshot ts = (TakesScreenshot) DriverFactory.getDriver();
-//            byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-//            String path = "test-output/screenshots/" + testName + ".png";
-//            Files.createDirectories(Paths.get("test-output/screenshots/"));
-//            Files.write(Paths.get(path), screenshot);
-//            return "screenshots/" + testName + ".png"; // For report reference
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
-
         try {
             TakesScreenshot ts = (TakesScreenshot) DriverFactory.getDriver();
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);

@@ -119,6 +119,7 @@ public class LandingPage extends BasePage {
     }
 
     public SlidersPage clickOnSlidersLink() {
+        actions.scrollToElement(slidersLink).click().build().perform();
         slidersLink.click();
         return new SlidersPage(driver);
         // Click on the Sliders link

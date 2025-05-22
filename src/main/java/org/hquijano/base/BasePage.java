@@ -29,10 +29,12 @@ import java.time.Duration;
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected Actions actions;
 
     public BasePage(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.actions = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -118,7 +120,6 @@ public class BasePage {
     }
 
     public BasePage moveToElement(WebElement element){
-        Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform(); // Use Actions to move mouse to the element
         return this;
     }

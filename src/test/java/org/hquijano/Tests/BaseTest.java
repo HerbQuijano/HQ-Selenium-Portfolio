@@ -15,10 +15,7 @@
 package org.hquijano.Tests;
 
 import org.hquijano.core.DriverFactory;
-import org.hquijano.pages.FormFieldsPage;
-import org.hquijano.pages.JSDelaysPage;
-import org.hquijano.pages.LandingPage;
-import org.hquijano.pages.PopupsPage;
+import org.hquijano.pages.*;
 import org.hquijano.utils.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -34,6 +31,7 @@ public class BaseTest {
     public JSDelaysPage jsDelaysPage;
     public FormFieldsPage formFieldsPage;
     public PopupsPage popupsPage;
+    public SlidersPage slidersPage;
 
     @BeforeMethod(alwaysRun = true)
     public void setup(){
@@ -45,6 +43,7 @@ public class BaseTest {
         jsDelaysPage = new JSDelaysPage(DriverFactory.getDriver());
         formFieldsPage = new FormFieldsPage(DriverFactory.getDriver());
         popupsPage = new PopupsPage(DriverFactory.getDriver());
+        slidersPage = new SlidersPage(DriverFactory.getDriver());
     }
 
 
