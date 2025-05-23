@@ -81,6 +81,12 @@ public class DriverFactory {
 
     public static RemoteWebDriver createRemoteChromeDriver() {
         ChromeOptions options = new ChromeOptions();
+
+        // Generate a unique temp profile directory for each run
+        String userDataDir = System.getProperty("java.io.tmpdir") + "/chrome-profile-" + System.nanoTime();
+
+        options.addArguments("--user-data-dir=" + userDataDir);
+
         if (isHeadless) {
             options.addArguments("--headless=new");
         }
