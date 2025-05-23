@@ -12,17 +12,14 @@
  * limitations under the License.
  */
 
-package org.hquijano.Tests;
+package org.hquijano.tests;
 
-import org.hquijano.listeners.ScreenshotListener;
 import org.hquijano.listeners.TestListener;
-import org.hquijano.pages.JSDelaysPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 public class JSDelaysPageTest extends BaseTest {
 
     @Test
@@ -33,7 +30,7 @@ public class JSDelaysPageTest extends BaseTest {
         Assert.assertEquals(liftoffMessage, "Liftoff!");
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void testRocketIsNotLaunchedAtPageLoad(){
         landingPage.navigateTo().clickOnJSDelaysLink();
         Assert.assertTrue(jsDelaysPage.isRocketNotLaunched());

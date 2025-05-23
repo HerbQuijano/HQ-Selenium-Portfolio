@@ -31,10 +31,10 @@ public class DriverFactory {
     // Setting up variable for Singleton pattern
     private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    private static final String browser = ConfigReader.getBrowser();
-    //private final String browser = System.getProperty("browser", "chrome");
-    private static final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
-    private static final boolean isRemote = Boolean.parseBoolean(System.getProperty("remote", "false"));
+    //private static final String browser = ConfigReader.getBrowser();
+    private static final String browser = System.getProperty("browser");
+    private static final boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless"));
+    private static final boolean isRemote = Boolean.parseBoolean(System.getProperty("remote"));
 
     // Setting up private constructor to implement Singleton pattern
     private DriverFactory(){
@@ -104,7 +104,7 @@ public class DriverFactory {
     private static WebDriver createRemoteFirefoxDriver() {
         FirefoxOptions options = new FirefoxOptions();
         if (isHeadless) {
-            options.addArguments("--headless");
+            options.addArguments("-headless");
         }
 
         try {
@@ -126,9 +126,15 @@ public class DriverFactory {
     private static WebDriver createRemoteEdgeDriver(){
         EdgeOptions options = new EdgeOptions();
 
-        if (isHeadless){
+        if (isHeadless) {
             options.addArguments("-headless=new");
+            options.addArguments("--disable-gpu");
         }
+
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-notifications");
+
         try {
             return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
         }

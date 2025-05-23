@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package org.hquijano.Tests;
+package org.hquijano.tests;
 
 import org.hquijano.listeners.TestListener;
 import org.openqa.selenium.WebElement;
@@ -23,11 +23,11 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-@Listeners({TestListener.class})
+//@Listeners({TestListener.class})
 public class LandingPageTest extends BaseTest {
     private int numberOfButtons = 19;
 
-    @Test
+    @Test(groups = {"smoke"})
     public void testTitle() {
         String title = landingPage.navigateTo().getTitle();
         Assert.assertEquals(title, "Learn and Practice Automation | automateNow");

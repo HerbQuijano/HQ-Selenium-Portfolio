@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" parallel="false">
+    <parameter name="browser" value="edge"/>
+    <parameter name="headless" value="false"/>
+    <parameter name="remote" value="false"/>
+
+    <listeners>
+        <listener class-name="org.hquijano.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Smoke Test">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.hquijano.tests.FormFieldsPageTest"/>
+            <class name="org.hquijano.tests.JSDelaysPageTest"/>
+            <class name="org.hquijano.tests.PopupsPageTest"/>
+            <class name="org.hquijano.tests.SlidersPageTest"/>
+        </classes>
+    </test>
+</suite>

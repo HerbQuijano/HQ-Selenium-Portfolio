@@ -12,18 +12,16 @@
  * limitations under the License.
  */
 
-package org.hquijano.Tests;
+package org.hquijano.tests;
 
 import org.hquijano.core.DriverFactory;
 import org.hquijano.pages.*;
 import org.hquijano.utils.ConfigReader;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
-import java.sql.Driver;
 import java.time.Duration;
 
 public class BaseTest {
@@ -32,6 +30,16 @@ public class BaseTest {
     public FormFieldsPage formFieldsPage;
     public PopupsPage popupsPage;
     public SlidersPage slidersPage;
+
+    @BeforeSuite(alwaysRun = true)
+    @Parameters({"browser", "headless", "remote"})
+    public void setUpSuite(String browser, String headless, String remote) {
+        // Setting up DriverFactory with provided parameters
+        System.setProperty("browser", browser);
+        System.setProperty("headless", headless);
+        System.setProperty("remote", remote);
+    }
+
 
     @BeforeMethod(alwaysRun = true)
     public void setup(){

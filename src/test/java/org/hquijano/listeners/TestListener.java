@@ -12,6 +12,7 @@ import org.hquijano.utilities.ScreenshotUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.*;
 
 import java.io.File;
@@ -46,8 +47,21 @@ public class TestListener implements ITestListener {
         logger.error("Cause: {}", String.valueOf(result.getThrowable()));
         test.get().fail(result.getThrowable());
 
-        String relativePath = ScreenshotUtil.captureScreenshot(result.getMethod().getMethodName());
-        test.get().addScreenCaptureFromPath(relativePath);
+        WebDriver driver = DriverFactory.getDriver();
+        if (driver instanceof RemoteWebDriver){
+            try {
+                if (((RemoteWebDriver) driver).getSessionId() != null) {
+                    String relativePath = ScreenshotUtil.captureScreenshot(result.getMethod().getMethodName());
+                    test.get().addScreenCaptureFromPath(relativePath);
+                }
+                else {
+                    test.get().warning("Webdriver session expired, no screenshot available");
+                }
+            }
+            catch (Exception e){
+                test.get().warning("Failed to capture screenshot: " + e.getMessage());
+            }
+        }
     }
 
     @Override

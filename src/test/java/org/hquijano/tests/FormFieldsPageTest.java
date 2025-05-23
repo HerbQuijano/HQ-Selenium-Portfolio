@@ -12,22 +12,19 @@
  * limitations under the License.
  */
 
-package org.hquijano.Tests;
+package org.hquijano.tests;
 
-import org.hquijano.listeners.ScreenshotListener;
 import org.hquijano.listeners.TestListener;
-import org.hquijano.pages.FormFieldsPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 public class FormFieldsPageTest extends BaseTest{
     private String expectedTitle = "Form Fields";
     private String name = "John Doe";
 
-    @Test
+    @Test(groups = {"smoke"})
     public void validateFormTitle(){
         landingPage.navigateTo().clickOnFormFieldsLink();
         String actualTitle = formFieldsPage.getFormTitleText();

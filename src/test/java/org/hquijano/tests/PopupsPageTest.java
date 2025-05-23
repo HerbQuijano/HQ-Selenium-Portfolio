@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package org.hquijano.Tests;
+package org.hquijano.tests;
 
-import org.hquijano.listeners.ScreenshotListener;
 import org.hquijano.listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 public class PopupsPageTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"smoke"})
     public void testAcceptAlertPopupText(){
         landingPage.navigateTo().clickOnPopupsLink();
         String popupText = popupsPage.clickAlertPopupButton().getPopupText();

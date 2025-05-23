@@ -15,7 +15,6 @@
 package org.hquijano.listeners;
 
 import org.apache.commons.io.FileUtils;
-import org.hquijano.Tests.BaseTest;
 import org.hquijano.core.DriverFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
