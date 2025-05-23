@@ -1,6 +1,7 @@
 package org.hquijano.pages;
 
 import org.hquijano.base.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,17 +39,22 @@ public class SlidersPage extends BasePage {
         // Calculate the percentage to move the slider using the calculated pixel offset
         int xOffset = (percentage * width) / 100;
 
-
         //System.out.println("Slider width: " + width);
         //System.out.println("Slider halfwidth: " + -width / 2);
 
         // Click and hold the slider at the center, then move to the left edge, then move to the desired percentage
         actions.clickAndHold(sliderElement)
                 .moveByOffset(-width / 2, 0)
+                //.moveByOffset(xOffset - 1, 0) // Cucumber adds an extra pixel to avoid a glitch when releasing the mouse button
                 .moveByOffset(xOffset, 0)
                 .perform();
 
         return this;
+    }
+
+    public void setSliderToPercentageJS(int percentage){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('input'));", sliderElement, percentage);
     }
 
     public SlidersPage resetToDefaultValue(){

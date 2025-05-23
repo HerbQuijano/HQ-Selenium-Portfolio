@@ -21,8 +21,8 @@ public class SlidersSteps {
 
     @When("I set the slider to {int} percent")
     public void i_set_the_slider_to_percent(int target) {
-        slidersPage.setSliderToPercentage(0);
-        slidersPage.setSliderToPercentage(target);
+        System.out.println(target);
+        slidersPage.setSliderToPercentageJS(target);
         System.out.println("Final: " + slidersPage.getSliderValue());
     }
 

@@ -2,7 +2,7 @@
 <suite name="SmokeSuite" parallel="false">
     <parameter name="browser" value="chrome"/>
     <parameter name="headless" value="true"/>
-    <parameter name="remote" value="true"/>
+    <parameter name="remote" value="false"/>
 
     <listeners>
         <listener class-name="org.hquijano.listeners.TestListener"/>

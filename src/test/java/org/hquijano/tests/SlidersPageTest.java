@@ -15,7 +15,8 @@ public class SlidersPageTest extends BaseTest {
     public void testSetByOffset() {
         landingPage.navigateTo().clickOnSlidersLink();
         System.out.println("Initial: " + slidersPage.getSliderValue());
-        slidersPage.setSliderToPercentage(target);
+        //slidersPage.setSliderToPercentage(target);
+        slidersPage.setSliderToPercentageJS(target);
         System.out.println("Final: " + slidersPage.getSliderValue());
         Assert.assertEquals(slidersPage.getSliderValue(), String.valueOf(target));
     }
