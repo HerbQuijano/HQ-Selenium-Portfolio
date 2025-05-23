@@ -86,7 +86,9 @@ public class DriverFactory {
         }
 
         try {
-            return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            //return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+
         }
         catch (MalformedURLException e) {
             throw new RuntimeException("Invalid URL for Selenium Grid", e);
@@ -108,7 +110,9 @@ public class DriverFactory {
         }
 
         try {
-            return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            //return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+
         }
         catch (MalformedURLException e) {
             throw new RuntimeException("Invalid URL for Selenium Grid", e);
@@ -136,7 +140,8 @@ public class DriverFactory {
         options.addArguments("--disable-notifications");
 
         try {
-            return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            //return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
         }
         catch (MalformedURLException e){
             throw new RuntimeException("Invalid URL for Selenium Grid", e);

@@ -37,13 +37,13 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        logger.info("✅ PASSED: {}", result.getName());
+        logger.info("PASSED: {}", result.getName());
         test.get().log(Status.PASS, "Test passed");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.error("❌ FAILED: {}", result.getName());
+        logger.error("FAILED: {}", result.getName());
         logger.error("Cause: {}", String.valueOf(result.getThrowable()));
         test.get().fail(result.getThrowable());
 
@@ -66,7 +66,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        logger.warn("⏭\uFE0F SKIPPED: {}", result.getName());
+        logger.warn("SKIPPED: {}", result.getName());
     }
 
     @Override
