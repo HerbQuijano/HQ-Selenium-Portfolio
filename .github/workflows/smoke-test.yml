@@ -19,3 +19,6 @@ jobs:
 
       - name: Build and Run Smoke Tests
         run: mvn clean test -Psmoke
+
+      - name: Debug Network
+        run: ping selenium-hub || curl http://selenium-hub:4444/status
