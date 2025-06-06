@@ -25,7 +25,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 
 public class DriverFactory {
     // Setting up variable for Singleton pattern
@@ -93,7 +93,7 @@ public class DriverFactory {
 
         try {
             //return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
-            return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+            return new RemoteWebDriver(URI.create("http://selenium-hub:4444/wd/hub").toURL(), options);
 
         }
         catch (MalformedURLException e) {
@@ -117,7 +117,7 @@ public class DriverFactory {
 
         try {
             //return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
-            return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+            return new RemoteWebDriver(URI.create("http://selenium-hub:4444/wd/hub").toURL(), options);
 
         }
         catch (MalformedURLException e) {
@@ -147,7 +147,7 @@ public class DriverFactory {
 
         try {
             //return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
-            return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+            return new RemoteWebDriver(URI.create("http://selenium-hub:4444/wd/hub").toURL(), options);
         }
         catch (MalformedURLException e){
             throw new RuntimeException("Invalid URL for Selenium Grid", e);

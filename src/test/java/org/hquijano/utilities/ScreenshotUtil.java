@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -23,8 +23,8 @@ public class ScreenshotUtil {
             String fileName = testName + "_" + timestamp + ".png";
             String fullPath = dirPath + fileName;
 
-            Files.createDirectories(Paths.get(dirPath));
-            Files.write(Paths.get(fullPath), screenshot);
+            Files.createDirectories(Path.of(dirPath));
+            Files.write(Path.of(fullPath), screenshot);
 
             // Return relative path for ExtentReports
             return "screenshots/" + fileName;

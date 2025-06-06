@@ -48,9 +48,9 @@ public class TestListener implements ITestListener {
         test.get().fail(result.getThrowable());
 
         WebDriver driver = DriverFactory.getDriver();
-        if (driver instanceof RemoteWebDriver){
+        if (driver instanceof RemoteWebDriver webDriver){
             try {
-                if (((RemoteWebDriver) driver).getSessionId() != null) {
+                if (webDriver.getSessionId() != null) {
                     String relativePath = ScreenshotUtil.captureScreenshot(result.getMethod().getMethodName());
                     test.get().addScreenCaptureFromPath(relativePath);
                 }

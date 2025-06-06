@@ -115,4 +115,12 @@ I built this framework to demonstrate clean test automation practices and streng
 
 Feel free to reach out on LinkedIn or message me about QA, Selenium, or test architecture.
 
+## To update Java version
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+-Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE\
+-Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeToJava21
+
+Remember to put quotes around parameter if using powershell
+
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/herbert-quijano-acu%C3%B1a-11838639/)

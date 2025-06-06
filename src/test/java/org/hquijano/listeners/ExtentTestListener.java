@@ -13,7 +13,7 @@ import org.testng.ITestResult;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
 public class ExtentTestListener implements ITestListener {
 
@@ -42,8 +42,8 @@ public class ExtentTestListener implements ITestListener {
         // Save screenshot to file and attach
         String screenshotPath = "screenshots/" + result.getMethod().getMethodName() + ".png";
         try {
-            Files.createDirectories(Paths.get("test-output/screenshots/"));
-            Files.write(Paths.get(screenshotPath), screenshot);
+            Files.createDirectories(Path.of("test-output/screenshots/"));
+            Files.write(Path.of(screenshotPath), screenshot);
             test.get().addScreenCaptureFromPath(screenshotPath);
         } catch (IOException e) {
             e.printStackTrace();
