@@ -28,7 +28,7 @@ resources/
 ```
 ## 🔧 Technologies Used
 
-- ✅ **Java 17+**
+- ✅ **Java 21+**
 - ✅ **Selenium 4+**
 - ✅ **TestNG**
 - ✅ **Maven** for dependency management
